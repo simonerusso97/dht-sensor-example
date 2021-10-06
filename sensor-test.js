@@ -8,6 +8,11 @@ if (!sensorLib.initialize(sensorType, sensorPin)) {
     console.warn('Failed to initialize sensor');
     process.exit(1);
 }
+const data = JSON.stringify({
+    "sensor":"ID1",
+    "timestamp": 123456789,
+    "temperature":20
+});
 
 const options = {
     hostname: '192.168.1.251',
@@ -31,11 +36,6 @@ const req = http.request(options, res => {
 
 });
 
-const data = JSON.stringify({
-    "sensor":"ID1",
-    "timestamp": 123456789,
-    "temperature":20
-});
 
 // Automatically update sensor value every 2 seconds
 setInterval(function() {
