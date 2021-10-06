@@ -15,7 +15,7 @@ const data = JSON.stringify({
 });
 
 const options = {
-    hostname: '192.168.1.251',
+    hostname: 'localhost',
     port: 3000,
     path: '/temperature',
     method: 'POST',
