@@ -1,5 +1,4 @@
 const sensorLib = require('node-dht-sensor');
-const http = require('http');
 const axios = require('axios');
 
 
@@ -37,35 +36,4 @@ setInterval(function () {
             console.error(error)
         });
 
-
-    //req.write(data)
-
-
 });
-
-const options = {
-    hostname: '192.168.1.100', //TODO: cambia a seconda quale rete wifi uso
-    port: 3000,
-    path: '/temperature',
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-        'Content-Length': data.length
-    }
-};
-const req = http.request(options, res => {
-    console.log(`statusCode: ${res.statusCode}`);
-
-    res.on('data', d => {
-        process.stdout.write(d)
-    });
-
-    req.on('error', error => {
-        console.log(error)
-    });
-    //req.end()
-}, 2000);
-
-
-
-
