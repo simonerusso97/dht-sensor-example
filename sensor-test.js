@@ -40,9 +40,7 @@ const req = http.request(options, res => {
 // Automatically update sensor value every 2 seconds
 setInterval(function() {
     var readout = sensorLib.read();
-
-    console.log('invio');
-
+    
     console.log('Temperature:', readout.temperature.toFixed(1) + 'C');
     console.log('Humidity:   ', readout.humidity.toFixed(1)    + '%');
 
