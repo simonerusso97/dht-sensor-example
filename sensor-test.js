@@ -31,7 +31,7 @@ const req = http.request(options, res => {
         process.stdout.write(d)
     });
     req.on('error', error => {
-        console.log(error)
+        console.error(error)
     });
 
 });
