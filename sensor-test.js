@@ -45,6 +45,7 @@ setInterval(function() {
     console.log('Humidity:   ', readout.humidity.toFixed(1)    + '%');
 
     req.write(data);
-    req.end();
 
 }, 2000);
+
+req.end();
